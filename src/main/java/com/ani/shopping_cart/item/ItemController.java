@@ -14,4 +14,11 @@ public class ItemController {
             System.out.printf("%-15d | %-15s | %-15f\n", item.getId(), item.getName(), item.getPrice());
         });
     }
+    public void removeItems(int id) {
+		int removeItem = itemDb.removeItem(id);
+
+		if (removeItem == ItemDb.REMOVED_ITEM) {
+			System.out.println("Item removed from list.");
+		}
+	}
 }

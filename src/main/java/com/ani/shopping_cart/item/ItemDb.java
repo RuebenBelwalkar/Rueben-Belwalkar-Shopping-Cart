@@ -36,5 +36,11 @@ public class ItemDb {
     	return null;
   
 }
-public static void addItemById(item id)
+public static Item findItemsById(int id) {
+	for (Item item : ITEMS) {
+		if (item.getId() == id)
+			return item;
+	}
+	throw new IdNotFoundException("Item Id not found");
+}
 }
